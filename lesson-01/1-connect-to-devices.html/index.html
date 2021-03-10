@@ -9,14 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
 
-    <title>Impacts of Digitalization - App Template</title>
+    <title>Impacts of Digitalization - Connect to Devices</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row mt-4">
             <div class="col-10 mx-auto">
-                <h1 class="mb-4">App Template</h1>
+                <h1 class="mb-4">Lesson 1 - First Steps Programming</h1>
+                <h2>1.1. Connect to Devices</h2>
 
                 <!-- This is a paragraph -->
                 <p>
@@ -29,30 +30,23 @@
 
                 <!-- This is a button that we can use to trigger something -->
                 <button class="btn btn-secondary mt-2" onclick="clearLog()">
-                    Clear
+                    Clear Console
                 </button>
 
-                <!-- This is a horizontal line -->
-                <hr />
+                <button class="btn btn-secondary mt-2" onclick="showInstructions()">
+                    Show Instructions
+                </button>
 
-                <!-- These are 2 more pargraphs with text -->
-                <p>You can use this input field to type something and use the value in
-                    your program. Use <code>getInut("myInput")</code> to get the value.</p>
-
-                <p>The button below prints the content of the input field to the console above.</p>
-
-                <!-- This is a single line input field to enter text -->
-                <input type="text" class="form-control mb-4" id="myInput" />
-
-                <!-- This button triggers a function that prints the text to the console -->
-                <button class="btn btn-secondary mt-2" onclick="printText()">Print Text to Console</button>
+                <button class="btn btn-primary mt-2" onclick="connect()">
+                    Establish Connection
+                </button>
 
             </div>
         </div>
     </div>
 
-    <!-- Import the HSOS Web Helper -->
-    <script src="https://cdn.jsdelivr.net/gh/winf-hsos/hsos-web-helper/all.min.js" type="module"></script>
+    <!-- Import a 3rd part library to handle dates -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js" type="text/javascript"></script>
 
     <!-- Import the official Tinkerforge library -->
     <script src="https://cdn.jsdelivr.net/gh/winf-hsos/tinkerforge-device-manager-web/lib/Tinkerforge.min.js"></script>
@@ -61,8 +55,11 @@
     <script src="https://cdn.jsdelivr.net/gh/winf-hsos/tinkerforge-device-manager-web/index.min.js"
         type="module"></script>
 
+    <!-- Import the HSOS Web Helper -->
+    <script src="https://cdn.jsdelivr.net/gh/winf-hsos/hsos-web-helper/all.min.js" type="module"></script>
+
     <!-- Import your own script -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
