@@ -18,12 +18,12 @@ function calculate() {
 
 }
 
+// A function to calculate the area
 function calculateArea(radius) {
     return Math.PI * radius * radius;
-
 }
 
+// A function to calculate the circumference
 function calculateCircumference(radius) {
     return 2 * Math.PI * radius;
-
 }
