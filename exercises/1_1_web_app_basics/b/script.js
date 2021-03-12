@@ -1,5 +1,5 @@
 /* global log, getInput */
-log("Solution for exercise 1.1 a)");
+log("Solution for exercise 1.1 b)");
 
 function checkOddOrEven() {
     // Get the value from the input field

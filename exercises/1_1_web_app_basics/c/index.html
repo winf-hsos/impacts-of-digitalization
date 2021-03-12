@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <title>Impacts of Digitalization - Exercise 1.1: Web App Basics - Task c)</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-10 mx-auto">
+                <h1 class="mb-4">Exercise 1.1: Web App Basics - Task c)</h1>
+
+                <!-- This is a paragraph -->
+                <p>
+                    This is the console. All output created with
+                    <code>log()</code> is shown here.
+                </p>
+
+                <!-- This a text area where we can type or output text -->
+                <textarea class="form-control" id="console" rows="14"></textarea>
+
+                <!-- This is a button that we can use to trigger something -->
+                <button class="btn btn-secondary mt-2" onclick="clearLog()">
+                    Clear
+                </button>
+
+                <!-- This is a horizontal line -->
+                <hr />
+                
+                <p>Please type a number in each input field and press "Add". I will print the sum of both to the console.</p>
+
+                <!-- This is a single line input field to enter a number -->
+                <input type="text" class="form-control mb-4" id="theNumberA" />
+
+                <!-- This is a single line input field to enter a number -->
+                <input type="text" class="form-control mb-4" id="theNumberB" />
+
+                <!-- This button triggers a function that prints the text to the console -->
+                <button class="btn btn-secondary mt-2" onclick="add()">Add</button>
+                
+                <hr>
+                <a href="/index.html"><< Back</a>
+
+                <hr>
+
+                <h2>script.js</h2>
+                <p>This is the JavaScript code behind the above application.</p>
+                <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fwinf-hsos%2Fimpacts-of-digitalization%2Fblob%2F5fd11e839bbf63e915c0a3149524f803daf8f4f2%2Fexercises%2F1_1_web_app_basics%2Fscript.js&style=grayscale&showBorder=on&showLineNumbers=on"></script>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Import the HSOS Web Helper -->
+    <script src="https://cdn.jsdelivr.net/gh/winf-hsos/hsos-web-helper/all.min.js" type="module"></script>
+
+    <!-- Import the official Tinkerforge library -->
+    <script src="https://cdn.jsdelivr.net/gh/winf-hsos/tinkerforge-device-manager-web/lib/Tinkerforge.min.js"></script>
+
+    <!-- Import the Tinkerforge Device Manager -->
+    <script src="https://cdn.jsdelivr.net/gh/winf-hsos/tinkerforge-device-manager-web/index.min.js"
+        type="module"></script>
+
+    <!-- Import your own script -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
