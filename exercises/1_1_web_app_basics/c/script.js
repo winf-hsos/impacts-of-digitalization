@@ -8,6 +8,6 @@ function add() {
 
     log("I will perform this calculation: " + numberA + " + " + numberB);
 
-    var sum = numberA + numberB;
+    var sum = parseFloat(numberA) + parseFloat(numberB);
     log("The result is: " + sum);
 }
