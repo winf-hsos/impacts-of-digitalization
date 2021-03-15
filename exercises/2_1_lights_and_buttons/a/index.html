@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Exercise 1.1 - Web App Basics | d) Area and circumference</title>
+    <title>Exercise 2.1 - Lights and Buttons | a) Light up the lED</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,8 +26,8 @@
         <div class="row mt-4">
             <div class="col-10 mx-auto">
                 <a class="mt-2 mb-4" style="display:block;" href="/index.html"><< Back</a>
-                <h1 class="mb-4">Exercise 1.1 - Web App Basics</h1>
-                <h2 class="mb-4">d) Area and circumference</h2>
+                <h1 class="mb-4">Exercise 2.1 - Lights and Buttons</h1>
+                <h2 class="mb-4">a) Light up the lED</h2>
 
                 <!-- This is a paragraph -->
                 <p>
@@ -43,20 +43,25 @@
                     Clear
                 </button>
 
-                <p>Please type the radius of a circle and press "Calculate". I will print the areas and circumference
-    for the circle to the console.</p>
+                <!-- These are 2 more pargraphs with text -->
+<p>Press the button to light the LED in green.</p>
 
-<!-- This is a single line input field to enter the radius -->
-<input type="text" class="form-control mb-4" id="radius" />
+<!-- This button triggers the function green() -->
+<button class="btn btn-secondary mt-2 mb-4" onclick="green()">Light up green</button>
 
-<!-- This button triggers the calculate() function -->
-<button class="btn btn-secondary mt-2" onclick="calculate()">Calculate</button>
+<p>Enter a color's RGB code to make the LED light up that color!</p>
+
+<!-- This is a single line input field to enter text -->
+<input type="text" class="form-control mb-2" id="hexColor" />
+
+<!-- This button triggers the function setColor() -->
+<button class="btn btn-secondary" onclick="setColor()">Set to hex color</button>
 
                 
                 <hr>
 <h2>script.js</h2>
 <p>This is the JavaScript code behind the above application.</p>
-<script src="https://emgithub.com/embed.js?target=https://github.com/winf-hsos/impacts-of-digitalization/blob/master/exercises/1_1_web_app_basics/d/script.js&style=grayscale&showBorder=on&showLineNumbers=on"></script>
+<script src="https://emgithub.com/embed.js?target=https://github.com/winf-hsos/impacts-of-digitalization/blob/master/exercises/2_1_lights_and_buttons/a/script.js&style=grayscale&showBorder=on&showLineNumbers=on"></script>
 
                 
 
