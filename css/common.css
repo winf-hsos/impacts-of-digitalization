@@ -14,16 +14,16 @@ h6 {
 }
 
 h1 {
-    color: #7db414;
+    color: #009ee3;
     font-weight: bold;
 }
 
-a,
+a:any-link,
 a:hover,
 a:visited {
-    color: #7db414;
+    color: #009ee3;
 }
 
 code {
-    color: #7db414;
+    color: #009ee3;
 }
