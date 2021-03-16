@@ -1,9 +1,10 @@
 /* global log, getInput, tf */
-log("Solution for exercise 2.1 b) Make the LED blink");
+log("Solution for exercise 2.1 c) Initialize LEDs on startup");
 
 // Create a global variable to store the found devices
 var devices;
 var led;
+var button;
 
 // Initialite connected devices
 tf.initDevices(initDone);
@@ -21,22 +22,14 @@ function initDone(connectedDevices) {
     // Get the LED light
     led = devices.getDeviceByIdentifier(271);
 
+    // Get the LED button
+    button = devices.getDeviceByIdentifier(282);
+
     // Turn the LED off initially
     led.off();
-}
 
-function blinkRed() {
-    // Make sure the LED is off
-    led.off();
+    // Set the button's LED to white
+    button.white();
 
-    // Get the frequency the user entered
-    var frequency = getInput("frequency");
-
-    // Make the LED blink red
-    led.blink(255, 0, 0, frequency);
-    log("LED should blink red at a frequency of >" + frequency + "<!");
-}
-
-function stopBlinking() {
-    led.off();
+    log("LED is off and button is white!")
 }
