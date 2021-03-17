@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 1.1 - Web App Basics | b) Odd or even</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolas Meseth">
+    <meta name="description" content="Code examples for the module Impacts of Digitalization at the University of Applied Sciences in Osnabrück.">
+
+    <!-- Include the common stylesheet -->
+    <link rel="stylesheet" href="/css/common.css" />
+
+    
+
+    <!-- import the bootstrap css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-10 mx-auto">
+                <a class="mt-2 mb-4" style="display:block;" href="/index.html"><< Back</a>
+                <h1 class="mb-4">Exercise 1.1 - Web App Basics</h1>
+                <h2 class="mb-4">b) Odd or even</h2>
+
+                <!-- This is a paragraph -->
+                <p>
+                    This is the console. All output created with
+                    <code>log()</code> is shown here.
+                </p>
+
+                <!-- This a text area where we can type or output text -->
+                <textarea class="form-control" id="console" rows="14"></textarea>
+
+                <!-- This is a button that we can use to trigger something -->
+                <button class="btn btn-secondary mt-2 mb-4" onclick="clearLog()">
+                    Clear
+                </button>
+
+                <p>Please type a number and press "Check odd or even". I will let you know whether the number is odd or even.</p>
+
+<!-- This is a single line input field to enter a number -->
+<input type="text" class="form-control mb-4" id="theNumber" />
+
+<!-- This button triggers a function that prints the text to the console -->
+<button class="btn btn-secondary mt-2" onclick="checkOddOrEven()">Check odd or even</button>
+
+                
+                <hr>
+<h2>script.js</h2>
+<p>This is the JavaScript code behind the above application.</p>
+<script src="https://emgithub.com/embed.js?target=https://github.com/winf-hsos/impacts-of-digitalization/blob/master/exercises/1_start_coding/1_1_web_app_basics/b/script.js&style=grayscale&showBorder=on&showLineNumbers=on"></script>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Import moment.js for date handling (required by Tinkerforge Device Manager)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<!-- Import the official Tinkerforge library -->
+<script src="https://cdn.jsdelivr.net/gh/winf-hsos/tinkerforge-device-manager-web/lib/Tinkerforge.min.js"></script>
+
+<!-- Import the Tinkerforge Device Manager -->
+<script src="https://cdn.jsdelivr.net/gh/winf-hsos/tinkerforge-device-manager-web@0.2.7/index.min.js"
+    type="module"></script>
+
+<!-- Import the HSOS Web Helper -->
+<script src="https://cdn.jsdelivr.net/gh/winf-hsos/hsos-web-helper/all.min.js" type="module"></script>
+
+
+
+    
+    <!-- import the webpage's javascript -->
+    <script src="script.js" defer></script>
+    
+
+</body >
+
+</html >
