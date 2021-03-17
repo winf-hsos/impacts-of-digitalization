@@ -37,7 +37,7 @@ function buttonPressed(buttonEvent) {
     var buttonState = buttonEvent.getValue("button_state");
 
     // When the state is RELEASED, the button must have been pressed before
-    if (buttonState.value === "RELEASED") {
+    if (buttonState === "RELEASED") {
 
         // Generate an integer random number between 0 and 3
         var r = Math.floor(Math.random() * 4);

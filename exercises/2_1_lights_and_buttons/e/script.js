@@ -43,7 +43,7 @@ function buttonPressed(buttonEvent) {
     var buttonState = buttonEvent.getValue("button_state");
 
     // When the state is RELEASED, the button must have been pressed before
-    if (buttonState.value === "RELEASED") {
+    if (buttonState === "RELEASED") {
         if (ledIsOn) {
             led.off();
             ledIsOn = false;

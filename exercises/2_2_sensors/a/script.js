@@ -24,7 +24,7 @@ function initDone(connectedDevices) {
 
 function startReadingTemperature() {
     log("Start to read the temperature.")
-    temperatureSensor.registerListener(temperatureChanged);
+    temperatureSensor.listen(temperatureChanged);
     temperatureSensor.setCallbackInterval(5000);
 }
 

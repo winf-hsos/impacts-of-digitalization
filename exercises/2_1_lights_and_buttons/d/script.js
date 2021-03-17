@@ -40,7 +40,7 @@ function buttonPressed(buttonEvent) {
     log(buttonState);
 
     // When the state is RELEASED, the button must have been pressed before
-    if(buttonState.value === "RELEASED") {
+    if(buttonState === "RELEASED") {
         led.setColor(0, 0, 255);
     }
 }

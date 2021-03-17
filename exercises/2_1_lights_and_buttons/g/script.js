@@ -48,7 +48,7 @@ function buttonPressed(buttonEvent) {
     var buttonState = buttonEvent.getValue("button_state");
 
     // When the state is RELEASED, the button must have been pressed before
-    if (buttonState.value === "RELEASED") {
+    if (buttonState === "RELEASED") {
 
         // Get the next color from the sequence
         var nextColor = colorSequence[index];
