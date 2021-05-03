@@ -1,5 +1,5 @@
 /* global log, getInput, tf */
-log("Solution for exercise 2.2 a) Read the temperature");
+log("Solution for exercise 2.2 b) Read the temperature and humidity");
 
 // Create a global variable to store the found devices
 var devices;
