@@ -36,8 +36,9 @@ function initDone(connectedDevices) {
     // Set the LED off on startup
     led.off();
 
-    // Get the RGB LED button
+    // Get the RGB LED button and turn it off
     btn = devices.getDeviceByIdentifier(282);
+    btn.off();
 }
 
 function setThreshold() {
