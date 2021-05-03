@@ -1,11 +1,14 @@
 /* global log, getInput, tf */
-log("Solution for exercise 2.2 d) Threshold requires human interaction");
+log("Solution for exercise 2.2 e) Human interaction");
 
 // Create a global variable to store the found devices
 var devices;
 var temperatureSensor;
 var led;
 var btn;
+
+// Global variable to remember whether action was taken
+var temperatureExceeded = false;
 
 // Create a global variable for the temperatur threshold
 // Set initial threshold to 25° C
@@ -39,11 +42,26 @@ function initDone(connectedDevices) {
     // Get the RGB LED button and turn it off
     btn = devices.getDeviceByIdentifier(282);
     btn.off();
+
+    // Get notified when button is pressed
+    btn.registerListener(buttonChanged);
 }
 
 function setThreshold() {
     temperatureThreshold = getInput("temperatureThreshold");
     log("New threshold: " + temperatureThreshold);
+}
+
+// This function is the callback for when the button is PRESSED or RELEASED
+function buttonChanged(event) {
+    var btnState = event.getValue();
+    log(btnState);
+
+    if (btnState === "RELEASED") {
+        log("Turning it off")
+        led.off();
+        btn.off();
+    }
 }
 
 function temperatureOrHumidityChanged(event) {
@@ -60,23 +78,29 @@ function temperatureOrHumidityChanged(event) {
 
     // Get the display element from the HTML via its ID
     var displayElement = document.getElementById("temperatureDisplay");
-    
+
     // Update the temperature display
     displayElement.textContent = temperatureFormatted;
 
     // Check if the threshold is exceeded
     if (temperature >= temperatureThreshold * 100) {
-        log("Warning: Temperature threshold exceeded: " + temperatureFormatted);
-        
-        // Set LED to red
-        led.setColor(255, 0, 0);
 
-        // Make the hardware button start blinking white
-        btn.blink(255, 255, 255, 500);
+        if (!temperatureExceeded) {
+            log("Warning: Temperature threshold exceeded: " + temperatureFormatted);
 
-        // Make the display's background red
-        displayElement.parentElement.classList.remove("alert-success");
-        displayElement.parentElement.classList.add("alert-danger");
+            // Set LED to red
+            led.setColor(255, 0, 0);
+
+            // Make the hardware button start blinking white
+            btn.blink(255, 255, 255, 500);
+
+            // Make the display's background red
+            displayElement.parentElement.classList.remove("alert-success");
+            displayElement.parentElement.classList.add("alert-danger");
+        }
+
+        // Remember that the temperature is exceeded
+        temperatureExceeded = true;
     }
     else {
         led.off();
@@ -84,5 +108,8 @@ function temperatureOrHumidityChanged(event) {
         // Make the display's background green again
         displayElement.parentElement.classList.remove("alert-danger");
         displayElement.parentElement.classList.add("alert-success");
+
+        // Remember that the temperature is OK again
+        temperatureExceeded = false;
     }
- }
+}
