@@ -1,10 +1,11 @@
 /* global log, getInput, tf */
-log("Solution for exercise 2.2 c) Temperature warnings with threshold");
+log("Solution for exercise 2.2 d) Human interaction");
 
 // Create a global variable to store the found devices
 var devices;
 var temperatureSensor;
 var led;
+var btn;
 
 // Create a global variable for the temperatur threshold
 // Set initial threshold to 25° C
@@ -34,6 +35,9 @@ function initDone(connectedDevices) {
 
     // Set the LED off on startup
     led.off();
+
+    // Get the RGB LED button
+    btn = devices.getDeviceByIdentifier(282);
 }
 
 function setThreshold() {
@@ -66,6 +70,9 @@ function temperatureOrHumidityChanged(event) {
         // Set LED to red
         led.setColor(255, 0, 0);
 
+        // Make the hardware button start blinking white
+        btn.blink(255, 255, 255, 500);
+
         // Make the display's background red
         displayElement.parentElement.classList.remove("alert-success");
         displayElement.parentElement.classList.add("alert-danger");
@@ -77,4 +84,4 @@ function temperatureOrHumidityChanged(event) {
         displayElement.parentElement.classList.remove("alert-danger");
         displayElement.parentElement.classList.add("alert-success");
     }
-}
+ }
