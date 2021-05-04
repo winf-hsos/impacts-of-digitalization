@@ -92,7 +92,7 @@ function buttonChanged(event) {
             else if (currentActionIndex === 2) {
                 heatLevel = heatLevel + (heatLevel === 10 ? 0 : 1);
             }
-       
+
             printHeatLevel();
         }
         // Navigate through the actions
