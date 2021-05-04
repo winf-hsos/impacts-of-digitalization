@@ -20,6 +20,9 @@ function initDone(connectedDevices) {
 
     // Get the OLED display
     oled = devices.getDeviceByIdentifier(263);
+
+    // Make sure the display is cleared
+    oled.clearDisplay();
     
     var welcomeMessage = "Welcome to my application!"
 
