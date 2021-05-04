@@ -85,18 +85,21 @@ function temperatureOrHumidityChanged(event) {
     // Check if the critical threshold is exceeded
     if (temperature >= temperatureThresholdCritical * 100) {
 
-        log("Warning: Temperature critical threshold exceeded: " + temperatureFormatted);
+        if (!temperatureExceededCritical) {
 
-        // Make the hardware button start blinking white
-        btn.blink(255, 255, 255, 500);
+            log("Warning: Temperature critical threshold exceeded: " + temperatureFormatted);
 
-        // Set LED to red
-        led.setColor(255, 0, 0);
+            // Make the hardware button start blinking white
+            btn.blink(255, 255, 255, 500);
 
-        // Make the display's background red
-        displayElement.parentElement.classList.remove("alert-success");
-        displayElement.parentElement.classList.add("alert-warning");
-        displayElement.parentElement.classList.add("alert-danger");
+            // Set LED to red
+            led.setColor(255, 0, 0);
+
+            // Make the display's background red
+            displayElement.parentElement.classList.remove("alert-success");
+            displayElement.parentElement.classList.add("alert-warning");
+            displayElement.parentElement.classList.add("alert-danger");
+        }
 
         // Remember that the temperature is exceeded
         temperatureExceededCritical = true;
@@ -119,7 +122,7 @@ function temperatureOrHumidityChanged(event) {
         temperatureExceededCritical = false;
     }
     else {
-        led.off();
+        led.setColor(0, 255, 0);
 
         // Make the display's background green again
         displayElement.parentElement.classList.remove("alert-danger");
