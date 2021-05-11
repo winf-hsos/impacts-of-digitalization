@@ -74,3 +74,13 @@ function visualize() {
         }
     }
 }
+
+function setMinMax() {
+    yMin = getInput("minTemp");
+    xMax = getInput("maxTemp");
+
+    // Reset chart
+    visualizationCoordinates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    log("New min: " + yMin + ", new max: " + xMax);
+}
