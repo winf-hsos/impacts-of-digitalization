@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.1 g) Sequence of colors");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.1 g) Sequence of colors");
 
 // Create a global variable to store the found devices
 var devices;
@@ -24,7 +24,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -52,7 +52,7 @@ function buttonPressed(buttonEvent) {
 
         // Get the next color from the sequence
         var nextColor = colorSequence[index];
-        log(nextColor);
+        writeLog(nextColor);
         led.setColor(nextColor.r, nextColor.g, nextColor.b);
 
         // Increase the position in the sequence

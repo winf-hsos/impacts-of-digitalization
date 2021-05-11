@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.3 c) Control the heat with the hardware button");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.3 c) Control the heat with the hardware button");
 
 // Create a global variable to store the found devices
 var devices;
@@ -25,7 +25,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -83,7 +83,7 @@ function buttonChanged(event) {
 
         // Perform the action
         if (durationButtonPressed >= 500) {
-            log("Performing action!");
+            writeLog("Performing action!");
 
             // Turn down heat
             if (currentActionIndex === 1) {
@@ -113,7 +113,7 @@ function printWelcome() {
     var welcomeMessage = "Welcome to my application!"
     oled.clearDisplay();
     oled.write(0, 0, welcomeMessage);
-    log(welcomeMessage);
+    writeLog(welcomeMessage);
 }
 
 // This functions takes care of printing the actions

@@ -1,4 +1,4 @@
-/* global log, getInput */
+/* global writeLog, getInput */
 log("Solution for exercise 1.1 c)");
 
 function add() {
@@ -6,8 +6,8 @@ function add() {
     var numberA = getInput("theNumberA");
     var numberB = getInput("theNumberB");
 
-    log("I will perform this calculation: " + numberA + " + " + numberB);
+    writeLog("I will perform this calculation: " + numberA + " + " + numberB);
 
     var sum = parseFloat(numberA) + parseFloat(numberB);
-    log("The result is: " + sum);
+    writeLog("The result is: " + sum);
 }

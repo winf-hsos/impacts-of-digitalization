@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.1 e) Hardware button toggles the LED");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.1 e) Hardware button toggles the LED");
 
 // Create a global variable to store the found devices
 var devices;
@@ -16,7 +16,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -47,12 +47,12 @@ function buttonPressed(buttonEvent) {
         if (ledIsOn) {
             led.off();
             ledIsOn = false;
-            log("Turned LED off.");
+            writeLog("Turned LED off.");
         }
         else {
             led.setColor(0, 0, 255);
             ledIsOn = true;
-            log("Turned LED on.")
+            writeLog("Turned LED on.")
         }
     }
 }

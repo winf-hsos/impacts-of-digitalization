@@ -1,5 +1,5 @@
 /* global log, getInput, tf */
-log("Solution for exercise 2.1 f) Random colors");
+writeLog("Solution for exercise 2.1 f) Random colors");
 
 // Create a global variable to store the found devices
 var devices;
@@ -13,7 +13,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -41,7 +41,7 @@ function buttonPressed(buttonEvent) {
 
         // Generate an integer random number between 0 and 3
         var r = Math.floor(Math.random() * 4);
-        log("The random number is " + r);
+        writeLog("The random number is " + r);
 
         switch (r) {
             case 0:

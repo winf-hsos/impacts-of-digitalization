@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.1 a) Light up the LED");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.1 a) Light up the LED");
 
 // Create a global variable to store the found devices
 var devices;
@@ -12,7 +12,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -25,7 +25,7 @@ function initDone(connectedDevices) {
 function green() {
     // Set the LED to green
     led.setColor(0, 255, 0);
-    log("LED should now be green!")
+    writeLog("LED should now be green!")
 }
 
 function setColor() {
@@ -39,5 +39,5 @@ function setColor() {
     // Set the color of the LED
     led.setColor(rgb[0], rgb[1], rgb[2]);
 
-    log("I set the color to R = " + rgb[0] + ", G = " + rgb[1] + ", B = " + rgb[2]);
+    writeLog("I set the color to R = " + rgb[0] + ", G = " + rgb[1] + ", B = " + rgb[2]);
 }

@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.1 d) Hardware button activates the LED");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.1 d) Hardware button activates the LED");
 
 // Create a global variable to store the found devices
 var devices;
@@ -13,7 +13,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -37,7 +37,7 @@ function buttonPressed(buttonEvent) {
     var buttonState = buttonEvent.getValue("button_state");
     
     // See what this object looks like
-    log(buttonState);
+    writeLog(buttonState);
 
     // When the state is RELEASED, the button must have been pressed before
     if(buttonState === "RELEASED") {

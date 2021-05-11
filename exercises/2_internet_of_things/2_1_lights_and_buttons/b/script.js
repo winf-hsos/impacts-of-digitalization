@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.1 b) Make the LED blink");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.1 b) Make the LED blink");
 
 // Create a global variable to store the found devices
 var devices;
@@ -12,7 +12,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -34,7 +34,7 @@ function blinkRed() {
 
     // Make the LED blink red
     led.blink(255, 0, 0, frequency);
-    log("LED should blink red at a frequency of >" + frequency + "<!");
+    writeLog("LED should blink red at a frequency of >" + frequency + "<!");
 }
 
 function stopBlinking() {

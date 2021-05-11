@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.3 d) Temperature visualized");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.3 d) Temperature visualized");
 
 // Create a global variable to store the found devices
 var devices;
@@ -23,7 +23,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -43,7 +43,7 @@ function sensorChanged(event) {
 
     if (newTemperature !== null) {
 
-        log("New temperature: " + (newTemperature / 100).toFixed(2) + "° C");
+        writeLog("New temperature: " + (newTemperature / 100).toFixed(2) + "° C");
 
         // Calcualte the height of the bar (max is 8)
         var barHeight = Math.min(Math.max(0, Math.round(((newTemperature / 100) - yMin) / (yMax - yMin) * maxHeight)), 8);
@@ -82,5 +82,5 @@ function setMinMax() {
     // Reset chart
     visualizationCoordinates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    log("New min: " + yMin + ", new max: " + xMax);
+    writeLog("New min: " + yMin + ", new max: " + xMax);
 }

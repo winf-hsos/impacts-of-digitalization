@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.2 b) Read the temperature and humidity");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.2 b) Read the temperature and humidity");
 
 // Create a global variable to store the found devices
 var devices;
@@ -12,7 +12,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -23,7 +23,7 @@ function initDone(connectedDevices) {
 }
 
 function startReadingTemperatureAndHumidity() {
-    log("Start to read the temperature and humidity.")
+    writeLog("Start to read the temperature and humidity.")
     temperatureSensor.listen(temperatureOrHumidityChanged);
     temperatureSensor.setCallbackInterval(5000);
 }
@@ -37,9 +37,9 @@ function temperatureOrHumidityChanged(event) {
     var value = valueObject.value / 100;
 
     if (valueObject.type === "temperature") {
-        log("Temperature: " + value.toFixed(2) +  " °C");
+        writeLog("Temperature: " + value.toFixed(2) +  " °C");
     }
     else if (valueObject.type === "humidity") {
-        log("Humidity: " + value.toFixed(2) +  " %");
+        writeLog("Humidity: " + value.toFixed(2) +  " %");
     }
 }

@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.1 c) Initialize LEDs on startup");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.1 c) Initialize LEDs on startup");
 
 // Create a global variable to store the found devices
 var devices;
@@ -13,7 +13,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -31,5 +31,5 @@ function initDone(connectedDevices) {
     // Set the button's LED to white
     button.white();
 
-    log("LED is off and button is white!")
+    writeLog("LED is off and button is white!")
 }

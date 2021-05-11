@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.3 a) Display a welcome message");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.3 a) Display a welcome message");
 
 // Create a global variable to store the found devices
 var devices;
@@ -12,7 +12,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -30,5 +30,5 @@ function initDone(connectedDevices) {
     oled.write(0, 0, welcomeMessage);
 
     // ... and to the console
-    log(welcomeMessage);
+    writeLog(welcomeMessage);
 }

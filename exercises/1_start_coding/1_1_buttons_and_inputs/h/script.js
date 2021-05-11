@@ -1,5 +1,5 @@
-/* global log, getInput */
-log("Solution for exercise 1.1 h)");
+/* global writeLog, getInput */
+writeLog("Solution for exercise 1.1 h)");
 
 function setHeader() {
     // Get the text for the header from the input field

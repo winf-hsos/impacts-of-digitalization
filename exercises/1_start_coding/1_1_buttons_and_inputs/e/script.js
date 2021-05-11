@@ -1,5 +1,5 @@
-/* global log, getInput */
-log("Solution for exercise 1.1 e)");
+/* global writeLog, getInput */
+writeLog("Solution for exercise 1.1 e)");
 
 function calculate() {
 
@@ -7,7 +7,7 @@ function calculate() {
     for (var i = 1; i <= 100; i++) {
         var area = calculateArea(i);
         var circumference = calculateCircumference(i);
-        log("Radius: " + i + ", area: " + area.toFixed(2) + ", circumference: " + circumference.toFixed(2));
+        writeLog("Radius: " + i + ", area: " + area.toFixed(2) + ", circumference: " + circumference.toFixed(2));
     }
 }
 

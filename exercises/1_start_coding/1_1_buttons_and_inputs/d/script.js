@@ -1,5 +1,5 @@
-/* global log, getInput */
-log("Solution for exercise 1.1 d)");
+/* global writeLog, getInput */
+writeLog("Solution for exercise 1.1 d)");
 
 function calculate() {
     // Get the radius from the user
@@ -8,13 +8,13 @@ function calculate() {
     // Make it a number
     radius = parseFloat(radius);
 
-    log("You entered the following radius: " + radius);
+    writeLog("You entered the following radius: " + radius);
 
     var area = calculateArea(radius);
     var circumference = calculateCircumference(radius);
 
-    log("The area is: " + area.toFixed(2));
-    log("The circumference is: " + circumference.toFixed(2));
+    writeLog("The area is: " + area.toFixed(2));
+    writeLog("The circumference is: " + circumference.toFixed(2));
 
 }
 

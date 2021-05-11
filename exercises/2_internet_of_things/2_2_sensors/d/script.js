@@ -1,5 +1,5 @@
-/* global log, getInput, tf */
-log("Solution for exercise 2.2 d) Threshold requires human interaction");
+/* global writeLog, getInput, tf */
+writeLog("Solution for exercise 2.2 d) Threshold requires human interaction");
 
 // Create a global variable to store the found devices
 var devices;
@@ -18,7 +18,7 @@ tf.initDevices(initDone);
 function initDone(connectedDevices) {
 
     if (connectedDevices.length === 0) {
-        log("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
+        writeLog("Oops, didn't find any devices! Make sure they are connected and refresh this page!");
     }
 
     // Store the devices on the global variable
@@ -43,7 +43,7 @@ function initDone(connectedDevices) {
 
 function setThreshold() {
     temperatureThreshold = getInput("temperatureThreshold");
-    log("New threshold: " + temperatureThreshold);
+    writeLog("New threshold: " + temperatureThreshold);
 }
 
 function temperatureOrHumidityChanged(event) {
@@ -66,7 +66,7 @@ function temperatureOrHumidityChanged(event) {
 
     // Check if the threshold is exceeded
     if (temperature >= temperatureThreshold * 100) {
-        log("Warning: Temperature threshold exceeded: " + temperatureFormatted);
+        writeLog("Warning: Temperature threshold exceeded: " + temperatureFormatted);
         
         // Set LED to red
         led.setColor(255, 0, 0);

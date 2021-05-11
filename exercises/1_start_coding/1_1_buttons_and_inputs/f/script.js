@@ -1,5 +1,5 @@
-/* global log, getInput */
-log("Solution for exercise 1.1 f)");
+/* global writeLog, getInput */
+writeLog("Solution for exercise 1.1 f)");
 
 function calculate() {
     // Get the radius from the user
@@ -10,18 +10,18 @@ function calculate() {
 
     // Check whether the parsing was successful
     if (isNaN(radius)) {
-        log("Ooops, the radius must be a number! This isn't a number: " + getInput("radius"));
+        writeLog("Ooops, the radius must be a number! This isn't a number: " + getInput("radius"));
     } else if (radius <= 0) {
-        log("Ooops, the radius must be a greater than 0!");
+        writeLog("Ooops, the radius must be a greater than 0!");
     } else {
 
-        log("You entered the following radius: " + radius);
+        writeLog("You entered the following radius: " + radius);
 
         var area = calculateArea(radius);
         var circumference = calculateCircumference(radius);
 
-        log("The area is: " + area.toFixed(2));
-        log("The circumference is: " + circumference.toFixed(2));
+        writeLog("The area is: " + area.toFixed(2));
+        writeLog("The circumference is: " + circumference.toFixed(2));
     }
 
     // Clear the input field
